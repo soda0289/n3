@@ -29,6 +29,7 @@
 #ifndef DISPLAY_H
 #define DISPLAY_H
 
+#include <cstdint>
 #include <ncurses.h>
 #include <iostream>
 #include <vector>

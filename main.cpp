@@ -22,6 +22,7 @@
  *
  */
 
+#include <signal.h>
 #include <iostream>
 #include <unistd.h>
 #include <time.h>

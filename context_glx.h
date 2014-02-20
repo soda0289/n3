@@ -23,36 +23,16 @@
  */
 
 
-#include <OpenGL/OpenGL.h>
+#include <GL/gl.h>
+#include <GL/glx.h>
 
 class Context {
- public:
-  CGLContextObj ctx;
-  CGLPixelFormatObj pix;
-  GLint npix;
+	bool ErrorOccurred = false;
+	bool isExtensionSupported(const char *extList, const char *extension);
+	//int ErrorHandler( Display *dpy, XErrorEvent *ev);
+	public:
+		Context() ;
+		~Context();
 
-  Context() {
-    CGLPixelFormatAttribute attribs[13] = {
-        kCGLPFAOpenGLProfile, (CGLPixelFormatAttribute)kCGLOGLPVersion_3_2_Core, // This sets the context to 3.2
-        kCGLPFAColorSize,     (CGLPixelFormatAttribute)24,
-        kCGLPFAAlphaSize,     (CGLPixelFormatAttribute)8,
-        kCGLPFAAccelerated,
-        kCGLPFADoubleBuffer,
-        kCGLPFASampleBuffers, (CGLPixelFormatAttribute)1,
-        kCGLPFASamples,       (CGLPixelFormatAttribute)4,
-        (CGLPixelFormatAttribute)0
-    };
-
-    CGLChoosePixelFormat(attribs, &pix, &npix);
-    CGLCreateContext(pix, NULL, &ctx); 
-    CGLSetCurrentContext(ctx);
-    CGLLockContext(ctx);
-  }
-
-  ~Context() {
-    CGLUnlockContext(ctx);
-    CGLDestroyPixelFormat(pix);
-    CGLDestroyContext(ctx);
-  }  
 };
 

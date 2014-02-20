@@ -25,9 +25,8 @@
 #ifndef OBJ_H
 #define OBJ_H
 
-#include <OpenGL/gl3.h>
-#include <OpenGL/gl3ext.h>
-#include <OpenGL/glext.h>
+#include <GL/gl.h>
+#include <GL/glext.h>
 #include <time.h>
 #include <unistd.h>
 #include <stdlib.h>

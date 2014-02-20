@@ -26,9 +26,8 @@
 #ifndef RENDERER_H
 #define RENDERER_H
 
-#include <OpenGL/gl3.h>
-#include <OpenGL/gl3ext.h>
-#include <OpenGL/glext.h>
+#include <GL/gl.h>
+#include <GL/glext.h>
 
 #define GLM_FORCE_RADIANS
 // glm::vec3, glm::vec4, glm::ivec4, glm::mat4
@@ -39,8 +38,8 @@
 // glm::value_ptr
 #include "glm/gtc/type_ptr.hpp"
 
+#include "context_glx.h"
 
-#include "context.h"
 #include "colorshader.h"
 #include "lightedcolorshader.h"
 #include "cube.h"

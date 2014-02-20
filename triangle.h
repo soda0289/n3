@@ -26,9 +26,8 @@
 #ifndef TRIANGLE_H
 #define TRIANGLE_H
 
-#include <OpenGL/gl3.h>
-#include <OpenGL/gl3ext.h>
-#include <OpenGL/glext.h>
+#include <GL/gl.h>
+#include <GL/glext.h>
 
 #include "colorshader.h"
 

@@ -1,7 +1,7 @@
 CC=g++
-CFLAGS=-c -Wall -I /System/Library/Frameworks/OpenGL.framework/Headers -g #-DTLF_FONTS
-LDFLAGS=-framework OpenGL -lncurses
-SOURCES=main.cpp shader.cpp renderer.cpp display.cpp objloader.cpp apirunner/game.cpp apirunner/player.cpp apirunner/gamecube.cpp #figlet/figlet.c figlet/zipio.c figlet/inflate.c figlet/utf8.c figlet/crc.c
+CFLAGS=-c -Wall `pkg-config --cflags gl` -g -DGL_GLEXT_PROTOTYPES -DGL_FRAGMENT_PRECISION_HIGH -std=c++11
+LDFLAGS=-lGL -lncurses -lX11
+SOURCES=main.cpp context_glx.cpp shader.cpp renderer.cpp display.cpp objloader.cpp apirunner/game.cpp apirunner/player.cpp apirunner/gamecube.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=n3
 

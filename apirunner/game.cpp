@@ -181,22 +181,23 @@ glm::vec3 Game::random_vec() {
 void Game::update(glm::vec2 delta) {
     for (std::vector<GameCube *>::iterator it = GameCubeVec.begin();
          it != GameCubeVec.end(); 
-         ++it) {
-        direction.x = delta.x;
-        direction.y = delta.y;
-        if (isDead)
-            continue;
-        (*it)->position += direction;
-        (*it)->position = ((*it)->position.z > 0.0f) ? random_vec() : ((*it)->position);
-        if ((*it)->position.z > -0.2f) {
-            if (((*it)->position.x > -2.f) && ((*it)->position.x < 2.f) &&
-                ((*it)->position.y > -2.f) && ((*it)->position.y < 2.f)) {
-                this->gameOver();
-            }
-        }
+         ++it) 
+		{
+			direction.x = delta.x;
+			direction.y = delta.y;
+			if (isDead)
+				continue;
+			(*it)->position += direction;
+			(*it)->position = ((*it)->position.z > 0.0f) ? random_vec() : ((*it)->position);
+			if ((*it)->position.z > -0.2f) {
+				if (((*it)->position.x > -2.f) && ((*it)->position.x < 2.f) &&
+					((*it)->position.y > -2.f) && ((*it)->position.y < 2.f)) {
+					this->gameOver();
+				}
+			}
 
-        //(*it)->position.x = ((*it)->position.x > 100.f) ? -100.0f : ((*it)->position.x);
-        //(*it)->position.y = ((*it)->position.y > 0.0f) ? -100.0f : ((*it)->position.y);
+			//(*it)->position.x = ((*it)->position.x > 100.f) ? -100.0f : ((*it)->position.x);
+			//(*it)->position.y = ((*it)->position.y > 0.0f) ? -100.0f : ((*it)->position.y);
     }
 }
 

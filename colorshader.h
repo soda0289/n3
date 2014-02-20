@@ -39,7 +39,7 @@
 
 namespace _ColorShader {
   static const GLchar *vertex_shader[] = {
-      "#version 330\n",
+      "#version 300 es\n",
       "layout(location = 0) in vec3 vertex;\n",
       "layout(location = 1) in vec3 vertexColor;\n",
       "out vec3 fragmentColor;\n",
@@ -52,9 +52,9 @@ namespace _ColorShader {
   };
 
   static const GLchar *fragment_shader[] = {
-      "#version 330\n",
-      "in vec3 fragmentColor;\n",
-      "out vec4 color;\n",
+      "#version 300 es\n",
+      "in lowp vec3 fragmentColor;\n",
+      "out lowp vec4 color;\n",
       "void main() {\n",
       "    color = vec4(fragmentColor, 1.0); // (pow(fragmentColor.r,2) + pow(fragmentColor.g,2) + pow(fragmentColor.b,2))/3.0);\n",
       "}"
